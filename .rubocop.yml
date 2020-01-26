@@ -1,0 +1,60 @@
+require:
+  - rubocop-rspec
+  - rubocop-rails
+
+# 標準の規約 + Railsの規約
+Rails:
+  Enabled: true
+
+AllCops:
+  # Rubyのバージョンを指定
+  TargetRubyVersion: 2.7.0
+  # 除外するファイル
+  Exclude:
+    - vendor/bundle/**/*
+    - bin/*
+    - db/**/*
+    - config/**/*
+    - Gemfile
+    - Rakefile
+    - Guardfile
+    - lib/tasks/auto_annotate_models.rake
+
+# class構文の上にコメントを書かなくてもよいように無効
+Style/Documentation:
+  Enabled: false
+
+# rspec context にwhen with withoutが入ってないと行けないが日本語でエラーになるので無視
+RSpec/ContextWording:
+  Enabled: false
+
+# 1行のMAXを120行に
+LineLength:
+  Max: 120
+
+# 日本語でコメントをかけるように
+Style/AsciiComments:
+  Enabled: false
+
+# 継承の書き方を自由に 両パターンにメリットがあるので ネストやHoge::ChildHogeこのような書き方
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# rspecのcontextの数を制限
+RSpec/NestedGroups:
+  Enabled: false
+
+# ブロックの行数をrspecの場合は制限しない
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+# Classを110行まで
+Metrics/ClassLength:
+  Max: 120
+
+Metrics/AbcSize:
+  Max: 20
