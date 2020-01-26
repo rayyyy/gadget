@@ -33,6 +33,10 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'database_cleaner'
+  gem 'rubocop', '~> 0.79.0', require: false
+  gem 'rubocop-rspec'
+  gem 'rubocop-rails'
 end
 
 group :development do
@@ -44,9 +48,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'rubocop', '~> 0.79.0', require: false
-  gem 'rubocop-rspec'
-  gem 'rubocop-rails'
   gem 'bullet'
   gem 'guard-rspec', require: false
   gem 'guard-rubocop'
