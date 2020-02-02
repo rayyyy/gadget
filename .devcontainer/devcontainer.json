@@ -23,7 +23,17 @@
 		// This will ignore your local shell user setting for Linux since shells like zsh are typically 
 		// not in base container images. You can also update this to an specific shell to ensure VS Code 
 		// uses the right one for terminals and tasks. For example, /bin/bash (or /bin/ash for Alpine).
-    "terminal.integrated.shell.linux": "/bin/zsh"
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "ruby.format": "rubocop",
+    "[ruby]": {
+      "editor.formatOnSave": true
+    },
+    "ruby.lint": {
+      "rubocop": {
+        "useBundler": true // enable rubocop via bundler
+      }
+    },
+    "editor.formatOnSaveTimeout": 1500
   },
 
 	// Uncomment the next line if you want start specific services in your Docker Compose config.
@@ -39,6 +49,7 @@
   "extensions": [
     "rebornix.ruby",
     "castwide.solargraph",
+    "misogi.ruby-rubocop",
     "robinbentley.sass-indented",
     "kaiwood.endwise",
     "bung87.rails",

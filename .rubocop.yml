@@ -29,7 +29,7 @@ RSpec/ContextWording:
   Enabled: false
 
 # 1行のMAXを120行に
-LineLength:
+Layout/LineLength:
   Max: 120
 
 # 日本語でコメントをかけるように
